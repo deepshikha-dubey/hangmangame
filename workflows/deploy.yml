@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.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 }}
+        publish_dir: ./   # If your files are in root
+
